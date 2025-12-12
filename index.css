@@ -1,0 +1,114 @@
+/* === Reset === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #eef2ff, #dbeafe);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* === Main Container === */
+        .container {
+            background: #ffffff;
+            max-width: 600px;
+            width: 100%;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+
+            /* Animated glowing border */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            padding: 3px;
+            background: linear-gradient(45deg, #2563eb, #7c3aed, #ec4899, #14b8a6);
+            background-size: 300% 300%;
+            animation: borderGlow 6s infinite alternate;
+            -webkit-mask: 
+                linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+                    mask-composite: exclude;
+        }
+
+        @keyframes borderGlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* === Header Animation === */
+        h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            font-weight: 700;
+
+            animation: fadeDown 1.5s ease;
+            text-shadow: 0 0 10px rgba(80, 80, 200, 0.3);
+            transition: 0.4s;
+        }
+
+        h1:hover {
+            text-shadow: 0 0 20px rgba(80, 80, 200, 0.8);
+            transform: scale(1.03);
+        }
+
+        @keyframes fadeDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* === Paragraph Styling === */
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #374151;
+            animation: fadeIn 2s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+
+        /* === Footer === */
+        footer {
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px solid #e5e7eb;
+            animation: fadeIn 2.2s ease;
+        }
+
+        footer p {
+            font-size: 14px;
+            color: #6b7280;
+        }
+
+        /* === Responsiveness === */
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
