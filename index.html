@@ -48,21 +48,10 @@
 <script>
     window.addEventListener("click", () => {
         const music = document.getElementById("bgMusic");
-        music.volume = 0;
+        music.volume = 0.6;
         music.play();
-
-        let vol = 0;
-        const fade = setInterval(() => {
-            if (vol < 0.6) {
-                vol += 0.05;
-                music.volume = vol;
-            } else {
-                clearInterval(fade);
-            }
-    }, 200);
     }, { once: true });
 </script>
-
 
 </body>
 </html>

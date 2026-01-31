@@ -23,6 +23,7 @@ body.dark {
 
 /* ===== CARD ===== */
 .container {
+    margin: 10px 20px;
     background: rgba(255, 255, 255, 0.92);
     max-width: 760px;
     width: 100%;
@@ -85,7 +86,7 @@ body.dark h2 {
     color: #374151;
     margin-bottom: 25px;
     line-height: 2;
-    min-height: 140px;
+    /* min-height: 140px; */
     font-weight: 400;
 }
 
@@ -196,6 +197,10 @@ body.dark footer {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 600px) {
+    body {
+        overflow: scroll;
+    }
+
     h1 {
         font-size: 34px;
     }
