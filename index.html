@@ -3,22 +3,25 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Happy New Year My Love 💖</title>
+<title>Happy New Month My Love 💖</title>
 <link rel="stylesheet" href="index.css">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- 🎵 AUTOPLAY MUSIC -->
-<audio autoplay loop>
-    <source src="/images/temi_1.jpeg3" type="audio/mpeg">
+<!-- 🎵 NIGERIAN LOVE INSTRUMENTAL -->
+<!-- 🎵 BACKGROUND LOVE SONG -->
+<audio id="bgMusic" loop>
+    <source src="/images/Kizz-Daniel-4-Days.mp3" type="audio/mpeg">
 </audio>
+
 
 <div class="container">
     <button class="toggle-btn" onclick="toggleDark()">🌙</button>
 
-    <h1>Happy New Year My Love 💖</h1>
-    <h2>VIHO MODUPE YHONWATHODE</h2>
+    <h1>Happy New Month 💕</h1>
+    <h2>My Babe, TEMILADE 🌸</h2>
 
     <!-- TYPING TEXT -->
     <p class="message" id="typingText"></p>
@@ -33,56 +36,33 @@
         </div>
     </div>
 
-    <div class="btn">Forever With You 💕</div>
+    <div class="btn">Forever Yours 💖</div>
 
     <footer>
-        © 2025 TEMILADE 💖 Built with Love
+        © 2025 — From Your Love 💕 TEMILADE
     </footer>
 </div>
 
+<script src="./index.js"></script>
+
 <script>
-function toggleDark() {
-    document.body.classList.toggle("dark");
-}
+    window.addEventListener("click", () => {
+        const music = document.getElementById("bgMusic");
+        music.volume = 0;
+        music.play();
 
-/* ❤️ Floating Hearts */
-setInterval(() => {
-    const heart = document.createElement("div");
-    heart.className = "heart";
-    heart.innerHTML = "💖";
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration = 4 + Math.random() * 3 + "s";
-    document.body.appendChild(heart);
-    setTimeout(() => heart.remove(), 7000);
-}, 600);
-
-/* ⌨️ Typing Effect */
-const text = `As the new year begins, my heart chooses you again and again.
-VIHO MODUPE YHONWATHODE, you are my peace, my joy, my forever.
-From TEMILADE — I love you endlessly 💕✨`;
-
-let index = 0;
-const typingText = document.getElementById("typingText");
-
-function typeEffect() {
-    if (index < text.length) {
-        typingText.innerHTML += text.charAt(index);
-        index++;
-        setTimeout(typeEffect, 40);
-    }
-}
-typeEffect();
-
-/* 🎆 Fireworks */
-setInterval(() => {
-    const firework = document.createElement("div");
-    firework.className = "firework";
-    firework.style.left = Math.random() * 100 + "vw";
-    firework.style.top = Math.random() * 50 + "vh";
-    document.body.appendChild(firework);
-    setTimeout(() => firework.remove(), 1000);
-}, 1200);
+        let vol = 0;
+        const fade = setInterval(() => {
+            if (vol < 0.6) {
+                vol += 0.05;
+                music.volume = vol;
+            } else {
+                clearInterval(fade);
+            }
+    }, 200);
+    }, { once: true });
 </script>
+
 
 </body>
 </html>
